@@ -8,18 +8,19 @@
 </head>
 <body>
     <div id="app">
-        <h2 v-if="seen">{{ message }}</h2>
-        <h2 v-else-if="seen2">this is seen2</h2>
-        <h2 v-else="seen2">this is seen3</h2>
+        <ul>
+            <li v-for="data in todos">{{ data.text }} -- {{ data.lang }} -- {{ data.type }}</li>
+        </ul>
     </div>
     <script>
         var app = new Vue({
             el: '#app',
             data: {
-                seen:false,
-                seen2:true,
-                seen3:false,
-                message:"hello vue.."
+                todos: [
+                    {text:"html", lang:"hyper", type:"markup"},
+                    {text:"css", lang:"design"},
+                    {text:"js"}
+                ]
             }
         })
     </script>
